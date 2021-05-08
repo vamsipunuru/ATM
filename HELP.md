@@ -1,17 +1,43 @@
 # Getting Started
 
 ### Reference Documentation
-For further reference, please consider the following sections:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.4.5/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.4.5/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.4.5/reference/htmlsingle/#boot-features-developing-web-applications)
+**Run the application using maven 
+**
+mvn clean install spring-boot:run
 
-### Guides
-The following guides illustrate how to use some features concretely:
+**Run application with docker from root folder
+**
+docker-compose build
+docker-compose up
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+Application Launch Url
+
+http://localhost:8080/swagger-ui.html
+
+Implemented API /api/v1/withdraw
+
+Body should provide with the below given details
+{
+  "accountNumber": 123456789,
+  "amount": 575,
+  "pin": 1234
+}
+
+
+**Database tables we can see in the below url 
+**
+http://localhost:8080/h2-console/
+Application DB connection details in application.properties
+JDBC Url :jdbc:h2:mem:testdb
+
+Account table initialized with account details
+ATM table initialized with atm amount(1500)
+Currency table initialized with default available count of amount and currency.
+
+
+
+
+
+
 
