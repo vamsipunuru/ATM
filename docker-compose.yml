@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  myapp-main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vamsi/atm
+    restart: on-failure
+    ports:
+      - 8080:8080
+      
